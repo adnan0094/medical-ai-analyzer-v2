@@ -984,16 +984,18 @@
             document.getElementById('uploadArea').style.opacity = '1';
             const files = e.dataTransfer.files;
             if (files.length > 0) {
-                currentFile = files[0];
-                showAlert(`تم اختيار: ${currentFile.name}`, 'success');
+                currentFiles = Array.from(files);
+                const fileNames = currentFiles.map(f => f.name).join(', ');
+                showAlert(`تم اختيار ${currentFiles.length} ملف: ${fileNames}`, 'success');
             }
         }
 
         function handleFileSelect(e) {
             const files = e.target.files;
             if (files.length > 0) {
-                currentFile = files[0];
-                showAlert(`تم اختيار: ${currentFile.name}`, 'success');
+                currentFiles = Array.from(files);
+                const fileNames = currentFiles.map(f => f.name).join(', ');
+                showAlert(`تم اختيار ${currentFiles.length} ملف: ${fileNames}`, 'success');
             }
         }
 

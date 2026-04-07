@@ -587,6 +587,8 @@
             appearance: none;
         }
 
+
+
         @keyframes slideIn {
             from {
                 transform: translateY(-20px);
@@ -596,6 +598,34 @@
                 transform: translateY(0);
                 opacity: 1;
             }
+        }
+
+        /* Health Warning */
+        .health-warning {
+            background: linear-gradient(135deg, rgba(239, 68, 68, 0.12), rgba(244, 63, 94, 0.12));
+            border: 2px solid var(--danger);
+            border-radius: 10px;
+            padding: 12px;
+            text-align: center;
+            margin-top: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
+
+        .health-warning i {
+            font-size: 18px;
+            color: var(--danger);
+            flex-shrink: 0;
+        }
+
+        .health-warning p {
+            color: var(--danger);
+            font-weight: 600;
+            font-size: 13px;
+            margin: 0;
+            line-height: 1.4;
         }
     </style>
 </head>
@@ -653,6 +683,10 @@
                 <button class="btn btn-primary" onclick="analyzeFile()">
                     <i class="fas fa-stethoscope"></i> تحليل
                 </button>
+                <div class="health-warning">
+                    <i class="fas fa-exclamation-triangle"></i>
+                    <p>الدخان ضار بالصحة - ابتعد عنه لحياة صحيحة</p>
+                </div>
             </div>
 
             <!-- Text Tab -->
@@ -670,6 +704,10 @@
                 <button class="btn btn-primary" onclick="analyzeText()">
                     <i class="fas fa-stethoscope"></i> تحليل
                 </button>
+                <div class="health-warning">
+                    <i class="fas fa-exclamation-triangle"></i>
+                    <p>الدخان ضار بالصحة - ابتعد عنه لحياة صحيحة</p>
+                </div>
             </div>
         </div>
 
@@ -687,6 +725,8 @@
         <div class="spinner"></div>
         <div class="istighfar-text" id="istighfarText">استغفر الله...</div>
     </div>
+
+
 
     <!-- Settings Modal -->
     <div id="settingsModal" class="modal">

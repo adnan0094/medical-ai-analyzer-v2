@@ -621,11 +621,193 @@
         }
 
         .health-warning p {
+
+        /* Multiple Results Pages */
+        .results-pages {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .result-page {
+            background: var(--white);
+            border-radius: 12px;
+            padding: 16px;
+            border: 2px solid var(--secondary);
+            page-break-inside: avoid;
+        }
+
+        .page-header {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            padding: 12px;
+            border-radius: 8px;
+            margin-bottom: 12px;
+            font-weight: 700;
+            font-size: 14px;
+            text-align: center;
+        }
             color: var(--danger);
+
+        /* Multiple Results Pages */
+        .results-pages {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .result-page {
+            background: var(--white);
+            border-radius: 12px;
+            padding: 16px;
+            border: 2px solid var(--secondary);
+            page-break-inside: avoid;
+        }
+
+        .page-header {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            padding: 12px;
+            border-radius: 8px;
+            margin-bottom: 12px;
+            font-weight: 700;
+            font-size: 14px;
+            text-align: center;
+        }
             font-weight: 600;
+
+        /* Multiple Results Pages */
+        .results-pages {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .result-page {
+            background: var(--white);
+            border-radius: 12px;
+            padding: 16px;
+            border: 2px solid var(--secondary);
+            page-break-inside: avoid;
+        }
+
+        .page-header {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            padding: 12px;
+            border-radius: 8px;
+            margin-bottom: 12px;
+            font-weight: 700;
+            font-size: 14px;
+            text-align: center;
+        }
             font-size: 13px;
+
+        /* Multiple Results Pages */
+        .results-pages {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .result-page {
+            background: var(--white);
+            border-radius: 12px;
+            padding: 16px;
+            border: 2px solid var(--secondary);
+            page-break-inside: avoid;
+        }
+
+        .page-header {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            padding: 12px;
+            border-radius: 8px;
+            margin-bottom: 12px;
+            font-weight: 700;
+            font-size: 14px;
+            text-align: center;
+        }
             margin: 0;
+
+        /* Multiple Results Pages */
+        .results-pages {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .result-page {
+            background: var(--white);
+            border-radius: 12px;
+            padding: 16px;
+            border: 2px solid var(--secondary);
+            page-break-inside: avoid;
+        }
+
+        .page-header {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            padding: 12px;
+            border-radius: 8px;
+            margin-bottom: 12px;
+            font-weight: 700;
+            font-size: 14px;
+            text-align: center;
+        }
             line-height: 1.4;
+
+        /* Multiple Results Pages */
+        .results-pages {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .result-page {
+            background: var(--white);
+            border-radius: 12px;
+            padding: 16px;
+            border: 2px solid var(--secondary);
+            page-break-inside: avoid;
+        }
+
+        .page-header {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            padding: 12px;
+            border-radius: 8px;
+            margin-bottom: 12px;
+            font-weight: 700;
+            font-size: 14px;
+            text-align: center;
+        }
+        }
+
+        /* Multiple Results Pages */
+        .results-pages {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .result-page {
+            background: var(--white);
+            border-radius: 12px;
+            padding: 16px;
+            border: 2px solid var(--secondary);
+            page-break-inside: avoid;
+        }
+
+        .page-header {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            padding: 12px;
+            border-radius: 8px;
+            margin-bottom: 12px;
+            font-weight: 700;
+            font-size: 14px;
+            text-align: center;
         }
     </style>
 </head>
@@ -774,7 +956,7 @@
   "medications": [{"name": "اسم", "type": "نوع", "description": "وصف", "dosage": "جرعة", "usage_method": "طريقة"}]
 }`;
 
-        let currentFile = null;
+        let currentFiles = [];
         let istighfarIndex = 0;
 
         document.getElementById('uploadArea').addEventListener('click', () => {
@@ -823,19 +1005,153 @@
                 return;
             }
 
-            if (!currentFile) {
-                showAlert('اختر ملف', 'error');
+            if (currentFiles.length === 0) {
+                showAlert('اختر ملف على الأقل', 'error');
                 return;
             }
 
             const age = document.getElementById('ageUpload').value;
-            const reader = new FileReader();
-            reader.onload = async (e) => {
-                const base64 = e.target.result.split(',')[1];
-                const mimeType = currentFile.type || 'image/jpeg';
-                await performAnalysis(base64, age, true, mimeType);
-            };
-            reader.readAsDataURL(currentFile);
+            showLoading(true);
+
+            try {
+                let allAnalysis = [];
+                for (let i = 0; i < currentFiles.length; i++) {
+                    const file = currentFiles[i];
+                    const base64 = await fileToBase64(file);
+                    const mimeType = file.type || 'image/jpeg';
+                    const analysis = await performAnalysisForFile(base64, age, mimeType);
+                    allAnalysis.push({
+                        fileName: file.name,
+                        analysis: analysis
+                    });
+                }
+                displayMultipleResults(allAnalysis);
+            } catch (error) {
+                let errorMessage = error.message;
+                if (errorMessage.includes('401') || errorMessage.includes('429') || errorMessage.includes('quota') || errorMessage.includes('limit')) {
+                    errorMessage = 'تم انتهاء المفتاح - تواصل مع المطور عبر WhatsApp';
+                }
+                showAlert('⚠ ' + errorMessage, 'error');
+            } finally {
+                showLoading(false);
+            }
+        }
+
+        function fileToBase64(file) {
+            return new Promise((resolve, reject) => {
+                const reader = new FileReader();
+                reader.onload = (e) => {
+                    const base64 = e.target.result.split(',')[1];
+                    resolve(base64);
+                };
+                reader.onerror = reject;
+                reader.readAsDataURL(file);
+            });
+        }
+
+        async function performAnalysisForFile(data, age, mimeType) {
+            const apiKey = localStorage.getItem('apiKey');
+            const baseUrl = "https://openrouter.ai/api/v1";
+            const model = "openai/gpt-4o-mini";
+
+            const ageInfo = age ? `عمر المريض: ${age} سنة.` : "عمر المريض غير محدد.";
+            const userMessage = `${ageInfo}\nقم بتحليل هذا التقرير الطبي.`;
+            const messages = [
+                { role: "system", content: SYSTEM_PROMPT },
+                {
+                    role: "user",
+                    content: [
+                        { type: "text", text: userMessage },
+                        {
+                            type: "image_url",
+                            image_url: {
+                                url: `data:${mimeType};base64,${data}`
+                            }
+                        }
+                    ]
+                }
+            ];
+
+            const response = await fetch(`${baseUrl}/chat/completions`, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Authorization': `Bearer ${apiKey}`
+                },
+                body: JSON.stringify({
+                    model: model,
+                    messages: messages,
+                    response_format: { type: "json_object" }
+                })
+            });
+
+            if (!response.ok) {
+                const error = await response.json();
+                throw new Error(error.error?.message || 'خطأ في الاتصال');
+            }
+
+            const result = await response.json();
+            const analysisText = result.choices[0].message.content;
+            return JSON.parse(analysisText);
+        }
+
+        function displayMultipleResults(allAnalysis) {
+            let html = '<div class="results-pages">';
+            allAnalysis.forEach((item, index) => {
+                html += `<div class="result-page">`;
+                html += `<div class="page-header">الملف ${index + 1} من ${allAnalysis.length}: ${item.fileName}</div>`;
+                html += buildResultHTML(item.analysis);
+                html += `</div>`;
+            });
+            html += '</div>';
+            document.getElementById('resultsContent').innerHTML = html;
+            document.getElementById('resultsContainer').classList.add('active');
+            document.getElementById('inputCard').style.display = 'none';
+        }
+
+        function buildResultHTML(data) {
+            let html = `<span class="status-badge ${data.overall_status}">الحالة: ${getStatusLabel(data.overall_status)}</span>`;
+            html += `<div class="result-section"><h3>الملخص</h3><p>${data.summary}</p></div>`;
+            html += `<div class="result-section"><h3>التحليل</h3><p>${data.analysis}</p></div>`;
+            if (data.indicators && data.indicators.length > 0) {
+                html += '<div class="result-section"><h3>المؤشرات</h3>';
+                data.indicators.forEach(indicator => {
+                    html += `
+                        <div class="indicator-row">
+                            <div>
+                                <div class="indicator-name">${indicator.name}</div>
+                                <small>${indicator.unit}</small>
+                            </div>
+                            <div style="text-align: center;">
+                                <div class="indicator-value">${indicator.value}</div>
+                                <small>${indicator.normal_range}</small>
+                            </div>
+                            <span class="indicator-status ${indicator.status}">${getStatusLabel(indicator.status)}</span>
+                        </div>
+                    `;
+                });
+                html += '</div>';
+            }
+            if (data.recommendations) {
+                html += `<div class="result-section"><h3>التوصيات</h3><p>${data.recommendations}</p></div>`;
+            }
+            if (data.medications && data.medications.length > 0) {
+                html += '<div class="result-section"><h3>الأدوية</h3>';
+                data.medications.forEach(med => {
+                    const usageHtml = med.usage_method ? `<div class="medication-usage"><strong>الاستعمال:</strong> ${med.usage_method}</div>` : '';
+                    html += `
+                        <div class="medication-card">
+                            <div class="medication-name">${med.name}</div>
+                            <span class="medication-type">${med.type}</span>
+                            <div class="medication-description">${med.description}</div>
+                            <div class="medication-dosage">الجرعة: ${med.dosage}</div>
+                            ${usageHtml}
+                        </div>
+                    `;
+                });
+                html += '</div>';
+            }
+            return html;
         }
 
         async function analyzeText() {
@@ -853,7 +1169,66 @@
             }
 
             const age = document.getElementById('ageText').value;
-            await performAnalysis(text, age, false);
+               return JSON.parse(analysisText);
+        }
+
+        function displayMultipleResults(allAnalysis) {
+            let html = '<div class="results-pages">';
+            allAnalysis.forEach((item, index) => {
+                html += `<div class="result-page">`;
+                html += `<div class="page-header">الملف ${index + 1} من ${allAnalysis.length}: ${item.fileName}</div>`;
+                html += buildResultHTML(item.analysis);
+                html += `</div>`;
+            });
+            html += '</div>';
+            document.getElementById('resultsContent').innerHTML = html;
+            document.getElementById('resultsContainer').classList.add('active');
+            document.getElementById('inputCard').style.display = 'none';
+        }
+
+        function buildResultHTML(data) {
+            let html = `<span class="status-badge ${data.overall_status}">الحالة: ${getStatusLabel(data.overall_status)}</span>`;
+            html += `<div class="result-section"><h3>الملخص</h3><p>${data.summary}</p></div>`;
+            html += `<div class="result-section"><h3>التحليل</h3><p>${data.analysis}</p></div>`;
+            if (data.indicators && data.indicators.length > 0) {
+                html += '<div class="result-section"><h3>المؤشرات</h3>';
+                data.indicators.forEach(indicator => {
+                    html += `
+                        <div class="indicator-row">
+                            <div>
+                                <div class="indicator-name">${indicator.name}</div>
+                                <small>${indicator.unit}</small>
+                            </div>
+                            <div style="text-align: center;">
+                                <div class="indicator-value">${indicator.value}</div>
+                                <small>${indicator.normal_range}</small>
+                            </div>
+                            <span class="indicator-status ${indicator.status}">${getStatusLabel(indicator.status)}</span>
+                        </div>
+                    `;
+                });
+                html += '</div>';
+            }
+            if (data.recommendations) {
+                html += `<div class="result-section"><h3>التوصيات</h3><p>${data.recommendations}</p></div>`;
+            }
+            if (data.medications && data.medications.length > 0) {
+                html += '<div class="result-section"><h3>الأدوية</h3>';
+                data.medications.forEach(med => {
+                    const usageHtml = med.usage_method ? `<div class="medication-usage"><strong>الاستعمال:</strong> ${med.usage_method}</div>` : '';
+                    html += `
+                        <div class="medication-card">
+                            <div class="medication-name">${med.name}</div>
+                            <span class="medication-type">${med.type}</span>
+                            <div class="medication-description">${med.description}</div>
+                            <div class="medication-dosage">الجرعة: ${med.dosage}</div>
+                            ${usageHtml}
+                        </div>
+                    `;
+                });
+                html += '</div>';
+            }
+            return html;
         }
 
         async function performAnalysis(data, age, isImage, mimeType = null) {
@@ -1043,7 +1418,7 @@
             document.getElementById('diagnosisText').value = '';
             document.getElementById('ageText').value = '';
             document.getElementById('ageUpload').value = '';
-            currentFile = null;
+            currentFiles = [];
             document.getElementById('resultsContainer').classList.remove('active');
             document.getElementById('inputCard').style.display = 'block';
         }

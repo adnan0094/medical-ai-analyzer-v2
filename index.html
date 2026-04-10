@@ -370,50 +370,50 @@
         }
 
         .result-section {
-            margin-bottom: 16px;
+            margin-bottom: 20px;
         }
 
         .result-section h3 {
             color: var(--primary);
-            font-size: 17px;
-            margin-bottom: 14px;
-            border-bottom: 3px solid var(--secondary);
-            padding-bottom: 10px;
+            margin-bottom: 12px;
+            font-size: 18px;
             font-weight: 700;
         }
 
         .result-section p {
-            font-size: 15px;
-            line-height: 1.7;
             color: var(--text-dark);
+            line-height: 1.8;
+            font-size: 15px;
         }
 
+        /* Indicators */
         .indicator-row {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 14px;
+            padding: 12px;
             background: var(--light-bg);
-            border-radius: 12px;
-            margin-bottom: 12px;
-            border-right: 4px solid var(--secondary);
-            font-size: 14px;
+            border-radius: 10px;
+            margin-bottom: 10px;
+            border-right: 3px solid var(--secondary);
         }
 
         .indicator-name {
-            font-weight: 600;
+            font-weight: 700;
             color: var(--text-dark);
+            font-size: 15px;
         }
 
         .indicator-value {
+            font-size: 18px;
             font-weight: 700;
             color: var(--primary);
         }
 
         .indicator-status {
-            padding: 3px 8px;
-            border-radius: 4px;
-            font-size: 10px;
+            padding: 6px 12px;
+            border-radius: 6px;
+            font-size: 13px;
             font-weight: 600;
         }
 
@@ -423,68 +423,62 @@
         }
 
         .indicator-status.high {
-            background: rgba(239, 68, 68, 0.15);
-            color: var(--danger);
-        }
-
-        .indicator-status.low {
             background: rgba(245, 158, 11, 0.15);
             color: var(--warning);
         }
 
+        .indicator-status.low {
+            background: rgba(239, 68, 68, 0.15);
+            color: var(--danger);
+        }
+
+        /* Medications */
         .medication-card {
             background: linear-gradient(135deg, rgba(14, 165, 233, 0.08), rgba(6, 182, 212, 0.08));
-            padding: 16px;
+            border: 2px solid var(--secondary);
             border-radius: 12px;
-            margin-bottom: 14px;
-            border-right: 4px solid var(--secondary);
+            padding: 16px;
+            margin-bottom: 12px;
         }
 
         .medication-name {
+            font-size: 16px;
             font-weight: 700;
             color: var(--primary);
-            margin-bottom: 6px;
-            font-size: 16px;
+            margin-bottom: 8px;
         }
 
         .medication-type {
-            color: var(--accent);
-            font-weight: 600;
-            font-size: 13px;
-            margin-bottom: 8px;
-            background: rgba(6, 182, 212, 0.15);
             display: inline-block;
+            background: var(--secondary);
+            color: white;
             padding: 4px 12px;
             border-radius: 6px;
+            font-size: 12px;
+            font-weight: 600;
+            margin-bottom: 10px;
         }
 
         .medication-description {
             color: var(--text-dark);
             font-size: 14px;
-            margin-bottom: 8px;
+            margin-bottom: 10px;
             line-height: 1.6;
         }
 
         .medication-dosage {
-            color: var(--secondary);
-            font-weight: 600;
+            color: var(--text-dark);
             font-size: 14px;
+            font-weight: 600;
             margin-bottom: 8px;
         }
 
         .medication-usage {
-            background: rgba(14, 165, 233, 0.12);
-            padding: 12px;
-            border-radius: 8px;
-            border-right: 3px solid var(--secondary);
-            font-size: 13px;
             color: var(--text-dark);
-            margin-top: 10px;
-            line-height: 1.6;
-        }
-
-        .medication-usage strong {
-            color: var(--primary);
+            font-size: 14px;
+            margin-top: 8px;
+            padding-top: 8px;
+            border-top: 1px solid rgba(14, 165, 233, 0.3);
         }
 
         /* Modal */
@@ -497,8 +491,8 @@
             bottom: 0;
             background: rgba(0, 0, 0, 0.5);
             z-index: 999;
-            justify-content: center;
-            align-items: flex-end;
+            justify-content: flex-end;
+            flex-direction: column;
         }
 
         .modal.active {
@@ -588,8 +582,6 @@
             appearance: none;
         }
 
-
-
         @keyframes slideIn {
             from {
                 transform: translateY(-20px);
@@ -622,947 +614,9 @@
         }
 
         .health-warning p {
-
-        /* Multiple Results Pages */
-        .results-pages {
-            display: flex;
-            flex-direction: column;
-            gap: 16px;
-        }
-
-        .result-page {
-            background: var(--white);
-            border-radius: 12px;
-            padding: 16px;
-            border: 2px solid var(--secondary);
-            page-break-inside: avoid;
-        }
-
-        .page-header {
-
-        /* Result Actions */
-        .result-actions {
-            display: flex;
-            gap: 12px;
-            margin-top: 20px;
-            justify-content: center;
-        }
-
-        .result-actions .btn {
-            flex: 1;
-            max-width: 300px;
-        }
-            background: linear-gradient(135deg, var(--primary), var(--secondary));
-
-        /* Result Actions */
-        .result-actions {
-            display: flex;
-            gap: 12px;
-            margin-top: 20px;
-            justify-content: center;
-        }
-
-        .result-actions .btn {
-            flex: 1;
-            max-width: 300px;
-        }
-            color: white;
-
-        /* Result Actions */
-        .result-actions {
-            display: flex;
-            gap: 12px;
-            margin-top: 20px;
-            justify-content: center;
-        }
-
-        .result-actions .btn {
-            flex: 1;
-            max-width: 300px;
-        }
-            padding: 12px;
-
-        /* Result Actions */
-        .result-actions {
-            display: flex;
-            gap: 12px;
-            margin-top: 20px;
-            justify-content: center;
-        }
-
-        .result-actions .btn {
-            flex: 1;
-            max-width: 300px;
-        }
-            border-radius: 8px;
-
-        /* Result Actions */
-        .result-actions {
-            display: flex;
-            gap: 12px;
-            margin-top: 20px;
-            justify-content: center;
-        }
-
-        .result-actions .btn {
-            flex: 1;
-            max-width: 300px;
-        }
-            margin-bottom: 12px;
-
-        /* Result Actions */
-        .result-actions {
-            display: flex;
-            gap: 12px;
-            margin-top: 20px;
-            justify-content: center;
-        }
-
-        .result-actions .btn {
-            flex: 1;
-            max-width: 300px;
-        }
-            font-weight: 700;
-
-        /* Result Actions */
-        .result-actions {
-            display: flex;
-            gap: 12px;
-            margin-top: 20px;
-            justify-content: center;
-        }
-
-        .result-actions .btn {
-            flex: 1;
-            max-width: 300px;
-        }
-            font-size: 14px;
-
-        /* Result Actions */
-        .result-actions {
-            display: flex;
-            gap: 12px;
-            margin-top: 20px;
-            justify-content: center;
-        }
-
-        .result-actions .btn {
-            flex: 1;
-            max-width: 300px;
-        }
-            text-align: center;
-
-        /* Result Actions */
-        .result-actions {
-            display: flex;
-            gap: 12px;
-            margin-top: 20px;
-            justify-content: center;
-        }
-
-        .result-actions .btn {
-            flex: 1;
-            max-width: 300px;
-        }
-        }
-
-        /* Result Actions */
-        .result-actions {
-            display: flex;
-            gap: 12px;
-            margin-top: 20px;
-            justify-content: center;
-        }
-
-        .result-actions .btn {
-            flex: 1;
-            max-width: 300px;
-        }
             color: var(--danger);
-
-        /* Multiple Results Pages */
-        .results-pages {
-            display: flex;
-            flex-direction: column;
-            gap: 16px;
-        }
-
-        .result-page {
-            background: var(--white);
-            border-radius: 12px;
-            padding: 16px;
-            border: 2px solid var(--secondary);
-            page-break-inside: avoid;
-        }
-
-        .page-header {
-
-        /* Result Actions */
-        .result-actions {
-            display: flex;
-            gap: 12px;
-            margin-top: 20px;
-            justify-content: center;
-        }
-
-        .result-actions .btn {
-            flex: 1;
-            max-width: 300px;
-        }
-            background: linear-gradient(135deg, var(--primary), var(--secondary));
-
-        /* Result Actions */
-        .result-actions {
-            display: flex;
-            gap: 12px;
-            margin-top: 20px;
-            justify-content: center;
-        }
-
-        .result-actions .btn {
-            flex: 1;
-            max-width: 300px;
-        }
-            color: white;
-
-        /* Result Actions */
-        .result-actions {
-            display: flex;
-            gap: 12px;
-            margin-top: 20px;
-            justify-content: center;
-        }
-
-        .result-actions .btn {
-            flex: 1;
-            max-width: 300px;
-        }
-            padding: 12px;
-
-        /* Result Actions */
-        .result-actions {
-            display: flex;
-            gap: 12px;
-            margin-top: 20px;
-            justify-content: center;
-        }
-
-        .result-actions .btn {
-            flex: 1;
-            max-width: 300px;
-        }
-            border-radius: 8px;
-
-        /* Result Actions */
-        .result-actions {
-            display: flex;
-            gap: 12px;
-            margin-top: 20px;
-            justify-content: center;
-        }
-
-        .result-actions .btn {
-            flex: 1;
-            max-width: 300px;
-        }
-            margin-bottom: 12px;
-
-        /* Result Actions */
-        .result-actions {
-            display: flex;
-            gap: 12px;
-            margin-top: 20px;
-            justify-content: center;
-        }
-
-        .result-actions .btn {
-            flex: 1;
-            max-width: 300px;
-        }
-            font-weight: 700;
-
-        /* Result Actions */
-        .result-actions {
-            display: flex;
-            gap: 12px;
-            margin-top: 20px;
-            justify-content: center;
-        }
-
-        .result-actions .btn {
-            flex: 1;
-            max-width: 300px;
-        }
             font-size: 14px;
-
-        /* Result Actions */
-        .result-actions {
-            display: flex;
-            gap: 12px;
-            margin-top: 20px;
-            justify-content: center;
-        }
-
-        .result-actions .btn {
-            flex: 1;
-            max-width: 300px;
-        }
-            text-align: center;
-
-        /* Result Actions */
-        .result-actions {
-            display: flex;
-            gap: 12px;
-            margin-top: 20px;
-            justify-content: center;
-        }
-
-        .result-actions .btn {
-            flex: 1;
-            max-width: 300px;
-        }
-        }
-
-        /* Result Actions */
-        .result-actions {
-            display: flex;
-            gap: 12px;
-            margin-top: 20px;
-            justify-content: center;
-        }
-
-        .result-actions .btn {
-            flex: 1;
-            max-width: 300px;
-        }
             font-weight: 600;
-
-        /* Multiple Results Pages */
-        .results-pages {
-            display: flex;
-            flex-direction: column;
-            gap: 16px;
-        }
-
-        .result-page {
-            background: var(--white);
-            border-radius: 12px;
-            padding: 16px;
-            border: 2px solid var(--secondary);
-            page-break-inside: avoid;
-        }
-
-        .page-header {
-
-        /* Result Actions */
-        .result-actions {
-            display: flex;
-            gap: 12px;
-            margin-top: 20px;
-            justify-content: center;
-        }
-
-        .result-actions .btn {
-            flex: 1;
-            max-width: 300px;
-        }
-            background: linear-gradient(135deg, var(--primary), var(--secondary));
-
-        /* Result Actions */
-        .result-actions {
-            display: flex;
-            gap: 12px;
-            margin-top: 20px;
-            justify-content: center;
-        }
-
-        .result-actions .btn {
-            flex: 1;
-            max-width: 300px;
-        }
-            color: white;
-
-        /* Result Actions */
-        .result-actions {
-            display: flex;
-            gap: 12px;
-            margin-top: 20px;
-            justify-content: center;
-        }
-
-        .result-actions .btn {
-            flex: 1;
-            max-width: 300px;
-        }
-            padding: 12px;
-
-        /* Result Actions */
-        .result-actions {
-            display: flex;
-            gap: 12px;
-            margin-top: 20px;
-            justify-content: center;
-        }
-
-        .result-actions .btn {
-            flex: 1;
-            max-width: 300px;
-        }
-            border-radius: 8px;
-
-        /* Result Actions */
-        .result-actions {
-            display: flex;
-            gap: 12px;
-            margin-top: 20px;
-            justify-content: center;
-        }
-
-        .result-actions .btn {
-            flex: 1;
-            max-width: 300px;
-        }
-            margin-bottom: 12px;
-
-        /* Result Actions */
-        .result-actions {
-            display: flex;
-            gap: 12px;
-            margin-top: 20px;
-            justify-content: center;
-        }
-
-        .result-actions .btn {
-            flex: 1;
-            max-width: 300px;
-        }
-            font-weight: 700;
-
-        /* Result Actions */
-        .result-actions {
-            display: flex;
-            gap: 12px;
-            margin-top: 20px;
-            justify-content: center;
-        }
-
-        .result-actions .btn {
-            flex: 1;
-            max-width: 300px;
-        }
-            font-size: 14px;
-
-        /* Result Actions */
-        .result-actions {
-            display: flex;
-            gap: 12px;
-            margin-top: 20px;
-            justify-content: center;
-        }
-
-        .result-actions .btn {
-            flex: 1;
-            max-width: 300px;
-        }
-            text-align: center;
-
-        /* Result Actions */
-        .result-actions {
-            display: flex;
-            gap: 12px;
-            margin-top: 20px;
-            justify-content: center;
-        }
-
-        .result-actions .btn {
-            flex: 1;
-            max-width: 300px;
-        }
-        }
-
-        /* Result Actions */
-        .result-actions {
-            display: flex;
-            gap: 12px;
-            margin-top: 20px;
-            justify-content: center;
-        }
-
-        .result-actions .btn {
-            flex: 1;
-            max-width: 300px;
-        }
-            font-size: 13px;
-
-        /* Multiple Results Pages */
-        .results-pages {
-            display: flex;
-            flex-direction: column;
-            gap: 16px;
-        }
-
-        .result-page {
-            background: var(--white);
-            border-radius: 12px;
-            padding: 16px;
-            border: 2px solid var(--secondary);
-            page-break-inside: avoid;
-        }
-
-        .page-header {
-
-        /* Result Actions */
-        .result-actions {
-            display: flex;
-            gap: 12px;
-            margin-top: 20px;
-            justify-content: center;
-        }
-
-        .result-actions .btn {
-            flex: 1;
-            max-width: 300px;
-        }
-            background: linear-gradient(135deg, var(--primary), var(--secondary));
-
-        /* Result Actions */
-        .result-actions {
-            display: flex;
-            gap: 12px;
-            margin-top: 20px;
-            justify-content: center;
-        }
-
-        .result-actions .btn {
-            flex: 1;
-            max-width: 300px;
-        }
-            color: white;
-
-        /* Result Actions */
-        .result-actions {
-            display: flex;
-            gap: 12px;
-            margin-top: 20px;
-            justify-content: center;
-        }
-
-        .result-actions .btn {
-            flex: 1;
-            max-width: 300px;
-        }
-            padding: 12px;
-
-        /* Result Actions */
-        .result-actions {
-            display: flex;
-            gap: 12px;
-            margin-top: 20px;
-            justify-content: center;
-        }
-
-        .result-actions .btn {
-            flex: 1;
-            max-width: 300px;
-        }
-            border-radius: 8px;
-
-        /* Result Actions */
-        .result-actions {
-            display: flex;
-            gap: 12px;
-            margin-top: 20px;
-            justify-content: center;
-        }
-
-        .result-actions .btn {
-            flex: 1;
-            max-width: 300px;
-        }
-            margin-bottom: 12px;
-
-        /* Result Actions */
-        .result-actions {
-            display: flex;
-            gap: 12px;
-            margin-top: 20px;
-            justify-content: center;
-        }
-
-        .result-actions .btn {
-            flex: 1;
-            max-width: 300px;
-        }
-            font-weight: 700;
-
-        /* Result Actions */
-        .result-actions {
-            display: flex;
-            gap: 12px;
-            margin-top: 20px;
-            justify-content: center;
-        }
-
-        .result-actions .btn {
-            flex: 1;
-            max-width: 300px;
-        }
-            font-size: 14px;
-
-        /* Result Actions */
-        .result-actions {
-            display: flex;
-            gap: 12px;
-            margin-top: 20px;
-            justify-content: center;
-        }
-
-        .result-actions .btn {
-            flex: 1;
-            max-width: 300px;
-        }
-            text-align: center;
-
-        /* Result Actions */
-        .result-actions {
-            display: flex;
-            gap: 12px;
-            margin-top: 20px;
-            justify-content: center;
-        }
-
-        .result-actions .btn {
-            flex: 1;
-            max-width: 300px;
-        }
-        }
-
-        /* Result Actions */
-        .result-actions {
-            display: flex;
-            gap: 12px;
-            margin-top: 20px;
-            justify-content: center;
-        }
-
-        .result-actions .btn {
-            flex: 1;
-            max-width: 300px;
-        }
-            margin: 0;
-
-        /* Multiple Results Pages */
-        .results-pages {
-            display: flex;
-            flex-direction: column;
-            gap: 16px;
-        }
-
-        .result-page {
-            background: var(--white);
-            border-radius: 12px;
-            padding: 16px;
-            border: 2px solid var(--secondary);
-            page-break-inside: avoid;
-        }
-
-        .page-header {
-
-        /* Result Actions */
-        .result-actions {
-            display: flex;
-            gap: 12px;
-            margin-top: 20px;
-            justify-content: center;
-        }
-
-        .result-actions .btn {
-            flex: 1;
-            max-width: 300px;
-        }
-            background: linear-gradient(135deg, var(--primary), var(--secondary));
-
-        /* Result Actions */
-        .result-actions {
-            display: flex;
-            gap: 12px;
-            margin-top: 20px;
-            justify-content: center;
-        }
-
-        .result-actions .btn {
-            flex: 1;
-            max-width: 300px;
-        }
-            color: white;
-
-        /* Result Actions */
-        .result-actions {
-            display: flex;
-            gap: 12px;
-            margin-top: 20px;
-            justify-content: center;
-        }
-
-        .result-actions .btn {
-            flex: 1;
-            max-width: 300px;
-        }
-            padding: 12px;
-
-        /* Result Actions */
-        .result-actions {
-            display: flex;
-            gap: 12px;
-            margin-top: 20px;
-            justify-content: center;
-        }
-
-        .result-actions .btn {
-            flex: 1;
-            max-width: 300px;
-        }
-            border-radius: 8px;
-
-        /* Result Actions */
-        .result-actions {
-            display: flex;
-            gap: 12px;
-            margin-top: 20px;
-            justify-content: center;
-        }
-
-        .result-actions .btn {
-            flex: 1;
-            max-width: 300px;
-        }
-            margin-bottom: 12px;
-
-        /* Result Actions */
-        .result-actions {
-            display: flex;
-            gap: 12px;
-            margin-top: 20px;
-            justify-content: center;
-        }
-
-        .result-actions .btn {
-            flex: 1;
-            max-width: 300px;
-        }
-            font-weight: 700;
-
-        /* Result Actions */
-        .result-actions {
-            display: flex;
-            gap: 12px;
-            margin-top: 20px;
-            justify-content: center;
-        }
-
-        .result-actions .btn {
-            flex: 1;
-            max-width: 300px;
-        }
-            font-size: 14px;
-
-        /* Result Actions */
-        .result-actions {
-            display: flex;
-            gap: 12px;
-            margin-top: 20px;
-            justify-content: center;
-        }
-
-        .result-actions .btn {
-            flex: 1;
-            max-width: 300px;
-        }
-            text-align: center;
-
-        /* Result Actions */
-        .result-actions {
-            display: flex;
-            gap: 12px;
-            margin-top: 20px;
-            justify-content: center;
-        }
-
-        .result-actions .btn {
-            flex: 1;
-            max-width: 300px;
-        }
-        }
-
-        /* Result Actions */
-        .result-actions {
-            display: flex;
-            gap: 12px;
-            margin-top: 20px;
-            justify-content: center;
-        }
-
-        .result-actions .btn {
-            flex: 1;
-            max-width: 300px;
-        }
-            line-height: 1.4;
-
-        /* Multiple Results Pages */
-        .results-pages {
-            display: flex;
-            flex-direction: column;
-            gap: 16px;
-        }
-
-        .result-page {
-            background: var(--white);
-            border-radius: 12px;
-            padding: 16px;
-            border: 2px solid var(--secondary);
-            page-break-inside: avoid;
-        }
-
-        .page-header {
-
-        /* Result Actions */
-        .result-actions {
-            display: flex;
-            gap: 12px;
-            margin-top: 20px;
-            justify-content: center;
-        }
-
-        .result-actions .btn {
-            flex: 1;
-            max-width: 300px;
-        }
-            background: linear-gradient(135deg, var(--primary), var(--secondary));
-
-        /* Result Actions */
-        .result-actions {
-            display: flex;
-            gap: 12px;
-            margin-top: 20px;
-            justify-content: center;
-        }
-
-        .result-actions .btn {
-            flex: 1;
-            max-width: 300px;
-        }
-            color: white;
-
-        /* Result Actions */
-        .result-actions {
-            display: flex;
-            gap: 12px;
-            margin-top: 20px;
-            justify-content: center;
-        }
-
-        .result-actions .btn {
-            flex: 1;
-            max-width: 300px;
-        }
-            padding: 12px;
-
-        /* Result Actions */
-        .result-actions {
-            display: flex;
-            gap: 12px;
-            margin-top: 20px;
-            justify-content: center;
-        }
-
-        .result-actions .btn {
-            flex: 1;
-            max-width: 300px;
-        }
-            border-radius: 8px;
-
-        /* Result Actions */
-        .result-actions {
-            display: flex;
-            gap: 12px;
-            margin-top: 20px;
-            justify-content: center;
-        }
-
-        .result-actions .btn {
-            flex: 1;
-            max-width: 300px;
-        }
-            margin-bottom: 12px;
-
-        /* Result Actions */
-        .result-actions {
-            display: flex;
-            gap: 12px;
-            margin-top: 20px;
-            justify-content: center;
-        }
-
-        .result-actions .btn {
-            flex: 1;
-            max-width: 300px;
-        }
-            font-weight: 700;
-
-        /* Result Actions */
-        .result-actions {
-            display: flex;
-            gap: 12px;
-            margin-top: 20px;
-            justify-content: center;
-        }
-
-        .result-actions .btn {
-            flex: 1;
-            max-width: 300px;
-        }
-            font-size: 14px;
-
-        /* Result Actions */
-        .result-actions {
-            display: flex;
-            gap: 12px;
-            margin-top: 20px;
-            justify-content: center;
-        }
-
-        .result-actions .btn {
-            flex: 1;
-            max-width: 300px;
-        }
-            text-align: center;
-
-        /* Result Actions */
-        .result-actions {
-            display: flex;
-            gap: 12px;
-            margin-top: 20px;
-            justify-content: center;
-        }
-
-        .result-actions .btn {
-            flex: 1;
-            max-width: 300px;
-        }
-        }
-
-        /* Result Actions */
-        .result-actions {
-            display: flex;
-            gap: 12px;
-            margin-top: 20px;
-            justify-content: center;
-        }
-
-        .result-actions .btn {
-            flex: 1;
-            max-width: 300px;
-        }
         }
 
         /* Multiple Results Pages */
@@ -1581,131 +635,12 @@
         }
 
         .page-header {
-
-        /* Result Actions */
-        .result-actions {
-            display: flex;
-            gap: 12px;
-            margin-top: 20px;
-            justify-content: center;
-        }
-
-        .result-actions .btn {
-            flex: 1;
-            max-width: 300px;
-        }
-            background: linear-gradient(135deg, var(--primary), var(--secondary));
-
-        /* Result Actions */
-        .result-actions {
-            display: flex;
-            gap: 12px;
-            margin-top: 20px;
-            justify-content: center;
-        }
-
-        .result-actions .btn {
-            flex: 1;
-            max-width: 300px;
-        }
-            color: white;
-
-        /* Result Actions */
-        .result-actions {
-            display: flex;
-            gap: 12px;
-            margin-top: 20px;
-            justify-content: center;
-        }
-
-        .result-actions .btn {
-            flex: 1;
-            max-width: 300px;
-        }
-            padding: 12px;
-
-        /* Result Actions */
-        .result-actions {
-            display: flex;
-            gap: 12px;
-            margin-top: 20px;
-            justify-content: center;
-        }
-
-        .result-actions .btn {
-            flex: 1;
-            max-width: 300px;
-        }
-            border-radius: 8px;
-
-        /* Result Actions */
-        .result-actions {
-            display: flex;
-            gap: 12px;
-            margin-top: 20px;
-            justify-content: center;
-        }
-
-        .result-actions .btn {
-            flex: 1;
-            max-width: 300px;
-        }
-            margin-bottom: 12px;
-
-        /* Result Actions */
-        .result-actions {
-            display: flex;
-            gap: 12px;
-            margin-top: 20px;
-            justify-content: center;
-        }
-
-        .result-actions .btn {
-            flex: 1;
-            max-width: 300px;
-        }
+            font-size: 16px;
             font-weight: 700;
-
-        /* Result Actions */
-        .result-actions {
-            display: flex;
-            gap: 12px;
-            margin-top: 20px;
-            justify-content: center;
-        }
-
-        .result-actions .btn {
-            flex: 1;
-            max-width: 300px;
-        }
-            font-size: 14px;
-
-        /* Result Actions */
-        .result-actions {
-            display: flex;
-            gap: 12px;
-            margin-top: 20px;
-            justify-content: center;
-        }
-
-        .result-actions .btn {
-            flex: 1;
-            max-width: 300px;
-        }
-            text-align: center;
-
-        /* Result Actions */
-        .result-actions {
-            display: flex;
-            gap: 12px;
-            margin-top: 20px;
-            justify-content: center;
-        }
-
-        .result-actions .btn {
-            flex: 1;
-            max-width: 300px;
-        }
+            color: var(--primary);
+            margin-bottom: 16px;
+            padding-bottom: 12px;
+            border-bottom: 2px solid var(--secondary);
         }
 
         /* Result Actions */
@@ -1774,19 +709,15 @@
                 </div>
 
                 <button class="btn btn-primary" onclick="analyzeFile()">
-                    <i class="fas fa-stethoscope"></i> تحليل
+                    <i class="fas fa-magic"></i> تحليل التقرير
                 </button>
-                <div class="health-warning">
-                    <i class="fas fa-exclamation-triangle"></i>
-                    <p>الدخان ضار بالصحة - ابتعد عنه لحياة صحيحة</p>
-                </div>
             </div>
 
             <!-- Text Tab -->
             <div id="text" class="tab-content">
                 <div class="form-group">
-                    <label>وصف الحالة</label>
-                    <textarea id="diagnosisText" placeholder="أدخل الوصف..."></textarea>
+                    <label>وصف الحالة الطبية</label>
+                    <textarea id="diagnosisText" placeholder="أدخل وصف الحالة الطبية بالتفصيل..."></textarea>
                 </div>
 
                 <div class="form-group">
@@ -1795,18 +726,24 @@
                 </div>
 
                 <button class="btn btn-primary" onclick="analyzeText()">
-                    <i class="fas fa-stethoscope"></i> تحليل
+                    <i class="fas fa-magic"></i> تحليل الحالة
                 </button>
-                <div class="health-warning">
-                    <i class="fas fa-exclamation-triangle"></i>
-                    <p>الدخان ضار بالصحة - ابتعد عنه لحياة صحيحة</p>
-                </div>
+            </div>
+
+            <div class="health-warning">
+                <i class="fas fa-exclamation-triangle"></i>
+                <p>الدخان ضار بالصحة - ابتعد عنه لحياة صحيحة</p>
             </div>
         </div>
 
         <!-- Results -->
         <div id="resultsContainer" class="results-container card">
             <div id="resultsContent"></div>
+            <div class="result-actions">
+                <button class="btn btn-primary" onclick="downloadPDF()">
+                    <i class="fas fa-download"></i> تحميل PDF
+                </button>
+            </div>
             <button class="btn btn-primary" onclick="resetForm()" style="margin-top: 12px;">
                 <i class="fas fa-redo"></i> جديد
             </button>
@@ -1818,8 +755,6 @@
         <div class="spinner"></div>
         <div class="istighfar-text" id="istighfarText">استغفر الله...</div>
     </div>
-
-
 
     <!-- Settings Modal -->
     <div id="settingsModal" class="modal">
@@ -1864,7 +799,7 @@
   "analysis": "تحليل تفصيلي",
   "indicators": [{"name": "اسم", "value": "القيمة", "unit": "الوحدة", "normal_range": "النطاق", "status": "normal|high|low"}],
   "recommendations": "توصيات",
-  "medications": [{"name": "اسم", "type": "نوع", "description": "وصف", "dosage": "جرعة", "usage_method": "طريقة"}]
+  "medications": [{"name": "اسم الدواء", "type": "نوع الدواء", "description": "وصف الدواء", "dosage": "الجرعة", "usage_method": "طريقة الاستعمال"}]
 }`;
 
         let currentFiles = [];
@@ -2008,68 +943,6 @@
             return JSON.parse(analysisText);
         }
 
-        function displayMultipleResults(allAnalysis) {
-            let html = '<div class="results-pages">';
-            allAnalysis.forEach((item, index) => {
-                html += `<div class="result-page">`;
-                html += `<div class="page-header">الملف ${index + 1} من ${allAnalysis.length}: ${item.fileName}</div>`;
-                html += buildResultHTML(item.analysis);
-                html += `</div>`;
-            });
-            html += '<div class="result-actions"><button class="btn btn-primary" onclick="downloadPDF()"><i class="fas fa-download"></i> تحميل PDF</button></div>';
-            html += '</div>';
-            document.getElementById('resultsContent').innerHTML = html;
-            document.getElementById('resultsContainer').classList.add('active');
-            document.getElementById('inputCard').style.display = 'none';
-        }
-
-        function buildResultHTML(data) {
-            let html = `<span class="status-badge ${data.overall_status}">الحالة: ${getStatusLabel(data.overall_status)}</span>`;
-            html += `<div class="result-section"><h3>الملخص</h3><p>${data.summary}</p></div>`;
-            html += `<div class="result-section"><h3>التحليل</h3><p>${data.analysis}</p></div>`;
-            if (data.indicators && data.indicators.length > 0) {
-                html += '<div class="result-section"><h3>المؤشرات</h3>';
-                data.indicators.forEach(indicator => {
-                    html += `
-                        <div class="indicator-row">
-                            <div>
-                                <div class="indicator-name">${indicator.name}</div>
-                                <small>${indicator.unit}</small>
-                            </div>
-                            <div style="text-align: center;">
-                                <div class="indicator-value">${indicator.value}</div>
-                                <small>${indicator.normal_range}</small>
-                            </div>
-                            <span class="indicator-status ${indicator.status}">${getStatusLabel(indicator.status)}</span>
-                        </div>
-                    `;
-                });
-                html += '<div class="result-actions"><button class="btn btn-primary" onclick="downloadPDF()"><i class="fas fa-download"></i> تحميل PDF</button></div>';
-            html += '</div>';
-            }
-            if (data.recommendations) {
-                html += `<div class="result-section"><h3>التوصيات</h3><p>${data.recommendations}</p></div>`;
-            }
-            if (data.medications && data.medications.length > 0) {
-                html += '<div class="result-section"><h3>الأدوية</h3>';
-                data.medications.forEach(med => {
-                    const usageHtml = med.usage_method ? `<div class="medication-usage"><strong>الاستعمال:</strong> ${med.usage_method}</div>` : '';
-                    html += `
-                        <div class="medication-card">
-                            <div class="medication-name">${med.name}</div>
-                            <span class="medication-type">${med.type}</span>
-                            <div class="medication-description">${med.description}</div>
-                            <div class="medication-dosage">الجرعة: ${med.dosage}</div>
-                            ${usageHtml}
-                        </div>
-                    `;
-                });
-                html += '<div class="result-actions"><button class="btn btn-primary" onclick="downloadPDF()"><i class="fas fa-download"></i> تحميل PDF</button></div>';
-            html += '</div>';
-            }
-            return html;
-        }
-
         async function analyzeText() {
             const apiKey = localStorage.getItem('apiKey');
             if (!apiKey) {
@@ -2138,7 +1011,6 @@
 
         function displayTextResults(data) {
             let html = buildResultHTML(data);
-            html += '<div class="result-actions"><button class="btn btn-primary" onclick="downloadPDF()"><i class="fas fa-download"></i> تحميل PDF</button></div>';
             document.getElementById('resultsContent').innerHTML = html;
             window.currentAnalysisData = data;
             document.getElementById('resultsContainer').classList.add('active');
@@ -2153,7 +1025,6 @@
                 html += buildResultHTML(item.analysis);
                 html += `</div>`;
             });
-            html += '<div class="result-actions"><button class="btn btn-primary" onclick="downloadPDF()"><i class="fas fa-download"></i> تحميل PDF</button></div>';
             html += '</div>';
             document.getElementById('resultsContent').innerHTML = html;
             document.getElementById('resultsContainer').classList.add('active');
@@ -2164,6 +1035,7 @@
             let html = `<span class="status-badge ${data.overall_status}">الحالة: ${getStatusLabel(data.overall_status)}</span>`;
             html += `<div class="result-section"><h3>الملخص</h3><p>${data.summary}</p></div>`;
             html += `<div class="result-section"><h3>التحليل</h3><p>${data.analysis}</p></div>`;
+            
             if (data.indicators && data.indicators.length > 0) {
                 html += '<div class="result-section"><h3>المؤشرات</h3>';
                 data.indicators.forEach(indicator => {
@@ -2181,155 +1053,31 @@
                         </div>
                     `;
                 });
-                html += '<div class="result-actions"><button class="btn btn-primary" onclick="downloadPDF()"><i class="fas fa-download"></i> تحميل PDF</button></div>';
-            html += '</div>';
+                html += '</div>';
             }
+            
             if (data.recommendations) {
                 html += `<div class="result-section"><h3>التوصيات</h3><p>${data.recommendations}</p></div>`;
             }
+            
             if (data.medications && data.medications.length > 0) {
                 html += '<div class="result-section"><h3>الأدوية</h3>';
                 data.medications.forEach(med => {
-                    const usageHtml = med.usage_method ? `<div class="medication-usage"><strong>الاستعمال:</strong> ${med.usage_method}</div>` : '';
+                    const usageHtml = med.usage_method ? `<div class="medication-usage"><strong>طريقة الاستعمال:</strong> ${med.usage_method}</div>` : '';
                     html += `
                         <div class="medication-card">
                             <div class="medication-name">${med.name}</div>
                             <span class="medication-type">${med.type}</span>
                             <div class="medication-description">${med.description}</div>
-                            <div class="medication-dosage">الجرعة: ${med.dosage}</div>
+                            <div class="medication-dosage"><strong>الجرعة:</strong> ${med.dosage}</div>
                             ${usageHtml}
                         </div>
                     `;
                 });
-                html += '<div class="result-actions"><button class="btn btn-primary" onclick="downloadPDF()"><i class="fas fa-download"></i> تحميل PDF</button></div>';
-            html += '</div>';
+                html += '</div>';
             }
+            
             return html;
-        }
-
-        async function performAnalysis(data, age, isImage, mimeType = null) {
-            showLoading(true);
-
-            try {
-                const apiKey = localStorage.getItem('apiKey');
-                const baseUrl = "https://openrouter.ai/api/v1";
-                const model = "openai/gpt-4o-mini";
-
-                const ageInfo = age ? `عمر المريض: ${age} سنة.` : "عمر المريض غير محدد.";
-                let userMessage;
-                let messages;
-
-                if (isImage) {
-                    userMessage = `${ageInfo}\nقم بتحليل هذا التقرير الطبي.`;
-                    messages = [
-                        { role: "system", content: SYSTEM_PROMPT },
-                        {
-                            role: "user",
-                            content: [
-                                { type: "text", text: userMessage },
-                                {
-                                    type: "image_url",
-                                    image_url: {
-                                        url: `data:${mimeType};base64,${data}`
-                                    }
-                                }
-                            ]
-                        }
-                    ];
-                } else {
-                    userMessage = `${ageInfo}\nالتقرير:\n${data}`;
-                    messages = [
-                        { role: "system", content: SYSTEM_PROMPT },
-                        { role: "user", content: userMessage }
-                    ];
-                }
-
-                const response = await fetch(`${baseUrl}/chat/completions`, {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json',
-                        'Authorization': `Bearer ${apiKey}`
-                    },
-                    body: JSON.stringify({
-                        model: model,
-                        messages: messages,
-                        response_format: { type: "json_object" }
-                    })
-                });
-
-                if (!response.ok) {
-                    const error = await response.json();
-                    throw new Error(error.error?.message || 'خطأ في الاتصال');
-                }
-
-                const result = await response.json();
-                const analysisText = result.choices[0].message.content;
-                const analysis = JSON.parse(analysisText);
-
-                displayResults(analysis);
-            } catch (error) {
-                let errorMessage = error.message;
-                if (errorMessage.includes('401') || errorMessage.includes('429') || errorMessage.includes('quota') || errorMessage.includes('limit')) {
-                    errorMessage = 'تم انتهاء المفتاح - تواصل مع المطور عبر WhatsApp';
-                }
-                showAlert('⚠ ' + errorMessage, 'error');
-            } finally {
-                showLoading(false);
-            }
-        }
-
-        function displayResults(data) {
-            let html = `<span class="status-badge ${data.overall_status}">الحالة: ${getStatusLabel(data.overall_status)}</span>`;
-
-            html += `<div class="result-section"><h3>الملخص</h3><p>${data.summary}</p></div>`;
-            html += `<div class="result-section"><h3>التحليل</h3><p>${data.analysis}</p></div>`;
-
-            if (data.indicators && data.indicators.length > 0) {
-                html += '<div class="result-section"><h3>المؤشرات</h3>';
-                data.indicators.forEach(indicator => {
-                    html += `
-                        <div class="indicator-row">
-                            <div>
-                                <div class="indicator-name">${indicator.name}</div>
-                                <small>${indicator.unit}</small>
-                            </div>
-                            <div style="text-align: center;">
-                                <div class="indicator-value">${indicator.value}</div>
-                                <small>${indicator.normal_range}</small>
-                            </div>
-                            <span class="indicator-status ${indicator.status}">${getStatusLabel(indicator.status)}</span>
-                        </div>
-                    `;
-                });
-                html += '<div class="result-actions"><button class="btn btn-primary" onclick="downloadPDF()"><i class="fas fa-download"></i> تحميل PDF</button></div>';
-            html += '</div>';
-            }
-
-            if (data.recommendations) {
-                html += `<div class="result-section"><h3>التوصيات</h3><p>${data.recommendations}</p></div>`;
-            }
-
-            if (data.medications && data.medications.length > 0) {
-                html += '<div class="result-section"><h3>الأدوية</h3>';
-                data.medications.forEach(med => {
-                    const usageHtml = med.usage_method ? `<div class="medication-usage"><strong>الاستعمال:</strong> ${med.usage_method}</div>` : '';
-                    html += `
-                        <div class="medication-card">
-                            <div class="medication-name">${med.name}</div>
-                            <span class="medication-type">${med.type}</span>
-                            <div class="medication-description">${med.description}</div>
-                            <div class="medication-dosage">الجرعة: ${med.dosage}</div>
-                            ${usageHtml}
-                        </div>
-                    `;
-                });
-                html += '<div class="result-actions"><button class="btn btn-primary" onclick="downloadPDF()"><i class="fas fa-download"></i> تحميل PDF</button></div>';
-            html += '</div>';
-            }
-
-            document.getElementById('resultsContent').innerHTML = html;
-            document.getElementById('resultsContainer').classList.add('active');
-            document.getElementById('inputCard').style.display = 'none';
         }
 
         function getStatusLabel(status) {
